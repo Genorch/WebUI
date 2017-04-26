@@ -12,7 +12,7 @@ COPY package.json yarn.lock bower.json /usr/src/app/
 RUN yarn install
 
 # Copy source
-COPY . /usr/src/app/
+COPY ./UI /usr/src/app/
 
 # Serve command
 CMD yarn serve

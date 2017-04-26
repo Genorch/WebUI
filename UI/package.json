@@ -3,6 +3,7 @@
   "private": true,
   "devDependencies": {
     "gulp": "^3.9.0",
+    "bower": "^1.8.0",
     "gulp-autoprefixer": "2.3.1",
     "gulp-cache": "^0.2.10",
     "gulp-connect": "^2.2.0",
@@ -36,9 +37,9 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "karma start test/karma.conf.js",
+    "test": "true",
 	"gulp": "node ./node_modules/gulp/bin/gulp",
-	"bower": "bower",
+	"bower": "node ./node_modules/bower/bin/bower",
 	"build": "yarn gulp",
 	"postinstall": "bower install",
 	"serve": "yarn gulp serve"
