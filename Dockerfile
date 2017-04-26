@@ -8,7 +8,7 @@ EXPOSE 3000 3001
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
 # Copies dependencies in seperate layers to improve caching
-COPY package.json yarn.lock bower.json /usr/src/app/
+COPY ./UI/package.json ./UI/yarn.lock ./UI/bower.json /usr/src/app/
 RUN yarn install
 
 # Copy source
