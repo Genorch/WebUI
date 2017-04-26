@@ -36,6 +36,12 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "karma start test/karma.conf.js"
+    "test": "karma start test/karma.conf.js",
+	"gulp": "node ./node_modules/gulp/bin/gulp",
+	"bower": "bower",
+	"build": "yarn gulp",
+	"postinstall": "bower install",
+	"serve": "yarn gulp serve"
+
   }
 }
