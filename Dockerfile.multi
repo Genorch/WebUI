@@ -1,4 +1,4 @@
-FROM banian/node as builder
+FROM banian/node as build
 
 # ENV NODE_ENV=production
 
@@ -17,15 +17,15 @@ RUN yarn install && bower install
 # Copy source
 COPY ./UI /usr/src/app/
 
-# Serve command
-CMD grunt serve
+# Build command
+RUN grunt
 
 ## Second build stage
 FROM python:3-onbuild
 
 # Copy compiled files from the previous stage
-COPY --from=builder /usr/src/app/dist ./UI/dist
+COPY --from=build /usr/src/app/dist /usr/src/app/UI/dist
 
-CMD [ "python", "./genorch-serve.py" ]
+CMD ["python", "./genorch-serve.py"]
 
 EXPOSE 8080
