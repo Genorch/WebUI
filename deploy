@@ -1,0 +1,3 @@
+docker build -t tabrizian/genorch-web . -f Dockerfile.multi
+docker rm --force genorch
+docker run -d --name=genorch -p 80:8080 tabrizian/genorch-web
