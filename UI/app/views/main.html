@@ -2,12 +2,12 @@
   <form>
     <div class="form-group">
       <label>Handler Source Area</label>
-      <textarea type="text" class="form-control" col="80" rows="50" ng-model="handler_source"></textarea>
+      <textarea type="text" class="form-control" col="80" rows="50" ng-model="handlerSource"></textarea>
     </div>
     <div class="form-inline">
-      <label class="mr-sm-2" for="file">Source File</label>
+      <label class="mr-sm-2" for="file">Handler Source File</label>
       <input type="file" id="handler_file">
-      <button type="button" class="btn btn-primary" ng-click="fromFile()">Load from File</button>
+      <button type="button" class="btn btn-primary" ng-click="fromFile('handler')">Load from File</button>
     </div>
     <button type="submit" class="btn btn-primary" ng-click="handler()">Upload</button>
   </form>
@@ -17,12 +17,12 @@
   <form>
     <div class="form-group">
       <label>ATL Source Area</label>
-      <textarea type="text" class="form-control" col="80" rows="50" ng-model="atl_source"></textarea>
+      <textarea type="text" class="form-control" col="80" rows="50" ng-model="atlSource"></textarea>
     </div>
     <div class="form-inline">
-      <label class="mr-sm-2" for="file">Source File</label>
+      <label class="mr-sm-2" for="file">ATL Source File</label>
       <input type="file" id="atl_file">
-      <button type="button" class="btn btn-primary" ng-click="fromFile()">Load from File</button>
+      <button type="button" class="btn btn-primary" ng-click="fromFile('atl')">Load from File</button>
     </div>
     <button type="submit" class="btn btn-primary" ng-click="atl()">Upload</button>
   </form>
@@ -32,13 +32,13 @@
   <form>
     <div class="form-group">
       <label>STML Source Area</label>
-      <textarea type="text" class="form-control" col="80" rows="50" ng-model="stml_source"></textarea>
+      <textarea type="text" class="form-control" col="80" rows="50" ng-model="stmlSource"></textarea>
     </div>
     <div class="form-inline">
-      <label class="mr-sm-2" for="file">Source File</label>
+      <label class="mr-sm-2" for="file">STML Source File</label>
       <input type="file" id="stml_file">
-      <button type="button" class="btn btn-primary" ng-click="fromFile()">Load from File</button>
+      <button type="button" class="btn btn-primary" ng-click="fromFile('stml')">Load from File</button>
     </div>
-    <button type="submit" class="btn btn-primary" ng-click="stml_source()">Upload</button>
+    <button type="submit" class="btn btn-primary" ng-click="stml()">Upload</button>
   </form>
 </div>
