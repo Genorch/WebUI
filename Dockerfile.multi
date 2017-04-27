@@ -25,10 +25,18 @@ RUN grunt
 FROM python:3.6.1-slim
 
 WORKDIR /usr/src/app
+
+# Copies dependencies in seperate layers to improve caching
+COPY requirements.txt /usr/src/app/
+
+# Install dependencies
+RUN pip3 install -r requirements.txt
+
+# Copy source
 COPY . .
+
 # Copy compiled files from the previous stage
 COPY --from=builder /usr/src/app/dist /usr/src/app/UI/dist
-RUN pip3 install -r requirements.txt
 
 CMD ["python", "./genorch-serve.py"]
 
