@@ -29,11 +29,22 @@ def ui_handler(path):
 def root_handler():
     return flask.send_file('UI/dist/index.html')
 
-# Upload
+# Core
 
 
-@app.route('/upload', methods=['POST'])
-def upload_handler():
+@app.route('/handler', methods=['POST'])
+def handler_handler():
     data = flask.request.data.decode('ASCII')
+    print(data)
 
+
+@app.route('/stml', methods=['POST'])
+def stml_handler():
+    data = flask.request.data.decode('ASCII')
+    print(data)
+
+
+@app.route('/alt', methods=['POST'])
+def alt_handler():
+    data = flask.request.data.decode('ASCII')
     print(data)
