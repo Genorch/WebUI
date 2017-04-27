@@ -1,6 +1,4 @@
-FROM banian/node
-
-EXPOSE 3000 3001
+FROM banian/node as builder
 
 # ENV NODE_ENV=production
 
@@ -22,5 +20,12 @@ COPY ./UI /usr/src/app/
 # Serve command
 CMD grunt serve
 
-# Expose
-EXPOSE 9000
+## Second build stage
+FROM python:3-onbuild
+
+# Copy compiled files from the previous stage
+COPY --from=builder /usr/src/app/dist ./UI/dist
+
+CMD [ "python", "./genorch-serve.py" ]
+
+EXPOSE 8080
