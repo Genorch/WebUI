@@ -21,3 +21,6 @@ COPY ./UI /usr/src/app/
 
 # Serve command
 CMD grunt serve
+
+# Expose
+EXPOSE 9000
