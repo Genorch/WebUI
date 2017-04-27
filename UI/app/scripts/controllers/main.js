@@ -11,28 +11,28 @@ angular.module('genorchUi')
   .controller('MainCtrl', function ($scope, UploadService) {
 
     $scope.handler = function () {
-      UploadService.handler($scope.handler_source).then(function (data){
+      UploadService.handler($scope.handlerSource).then(function (data){
         console.log(data);
       });
     };
 
     $scope.atl = function () {
-      UploadService.handler($scope.atl_source).then(function (data){
+      UploadService.handler($scope.atlSource).then(function (data){
         console.log(data);
       });
     };
 
     $scope.stml = function () {
-      UploadService.handler($scope.stml_source).then(function (data){
+      UploadService.handler($scope.stmlSource).then(function (data){
         console.log(data);
       });
     };
 
-    $scope.fromFile = function () {
-      var file = document.getElementById('file').files[0];
+    $scope.fromFile = function (name) {
+      var file = document.getElementById(name + '_file').files[0];
       var reader = new FileReader();
       reader.onload = function (e) {
-        $scope.source = e.target.result;
+        $scope[name + 'Source'] = e.target.result;
       };
       if (file) {
         reader.readAsText(file);
