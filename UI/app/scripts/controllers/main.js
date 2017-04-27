@@ -8,9 +8,12 @@
  * Controller of the webUiApp
  */
 angular.module('genorchUi')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, UploadService) {
 
     $scope.upload = function () {
+      UploadService.upload($scope.source).then(function (data){
+        console.log(data);
+      });
     };
 
     $scope.fromFile = function () {
