@@ -28,3 +28,12 @@ def ui_handler(path):
 @app.route('/', methods=['GET'])
 def root_handler():
     return flask.send_file('UI/dist/index.html')
+
+# Upload
+
+
+@app.route('/upload', methods=['POST'])
+def upload_handler():
+    data = flask.request.data.decode('ASCII')
+
+    print(data)
