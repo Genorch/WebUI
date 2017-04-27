@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the webUiApp
  */
-angular.module('webUiApp')
+angular.module('uiApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
