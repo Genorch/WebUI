@@ -12,7 +12,9 @@ RUN yarn global add grunt-cli bower yo generator-karma generator-angular
 
 # Copies dependencies in seperate layers to improve caching
 COPY ./UI/package.json ./UI/yarn.lock ./UI/bower.json /usr/src/app/
-RUN yarn install
+
+# Install dependencies
+RUN yarn install && bower install
 
 # Copy source
 COPY ./UI /usr/src/app/
