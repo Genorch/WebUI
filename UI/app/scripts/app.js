@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name webUiApp
+ * @name genorchUi
  * @description
- * # webUiApp
+ * # :)
  *
  * Main module of the application.
  */
 angular
-  .module('webUiApp', [
+  .module('genorchUi', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

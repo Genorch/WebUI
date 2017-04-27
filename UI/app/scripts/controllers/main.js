@@ -7,11 +7,6 @@
  * # MainCtrl
  * Controller of the webUiApp
  */
-angular.module('webUiApp')
+angular.module('genorchUi')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
   });
