@@ -10,8 +10,20 @@
 angular.module('genorchUi')
   .controller('MainCtrl', function ($scope, UploadService) {
 
-    $scope.upload = function () {
-      UploadService.upload($scope.source).then(function (data){
+    $scope.handler = function () {
+      UploadService.handler($scope.handler_source).then(function (data){
+        console.log(data);
+      });
+    };
+
+    $scope.atl = function () {
+      UploadService.handler($scope.atl_source).then(function (data){
+        console.log(data);
+      });
+    };
+
+    $scope.stml = function () {
+      UploadService.handler($scope.stml_source).then(function (data){
         console.log(data);
       });
     };
