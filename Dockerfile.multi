@@ -1,3 +1,4 @@
+## First stage build angular
 FROM banian/node as build
 
 # ENV NODE_ENV=production
