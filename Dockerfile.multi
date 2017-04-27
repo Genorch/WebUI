@@ -1,5 +1,5 @@
 ## First stage build angular
-FROM banian/node as build
+FROM banian/node as builder
 
 # ENV NODE_ENV=production
 
@@ -22,10 +22,13 @@ COPY ./UI /usr/src/app/
 RUN grunt
 
 ## Second build stage
-FROM python:3-onbuild
+FROM python:3.6.1-slim
 
+WORKDIR /usr/src/app
+COPY . .
 # Copy compiled files from the previous stage
-COPY --from=build /usr/src/app/dist /usr/src/app/UI/dist
+COPY --from=builder /usr/src/app/dist /usr/src/app/UI/dist
+RUN pip3 install -r requirements.txt
 
 CMD ["python", "./genorch-serve.py"]
 
