@@ -1,10 +1,16 @@
-<ul class="nav nav-pills" role="tablist">
-    <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#handler">Handler</a></li>
-    <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#atl">ATL</a></li>
-    <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#stml">STML</a></li>
+<ul class="nav nav-tabs" role="tablist" id="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" role="tab" data-target="#handler" aria-controls="handler">Handler</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" role="tab" data-target="#atl" aria-controls="atl">ATL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" role="tab" data-target="#stml" aria-controls="stml">STML</a>
+    </li>
 </ul>
 <div class="tab-content">
-    <div id="handler" class="tab-pane active">
+    <div id="handler" class="tab-pane show active" role="tabpanel">
         <form>
             <div class="form-group">
                 <label>Handler Source Area</label>
@@ -18,7 +24,7 @@
             <button type="submit" class="btn btn-primary" ng-click="handler()">Upload</button>
         </form>
     </div>
-    <div id="atl" class="tab-pane fade">
+    <div id="atl" class="tab-pane fade" role="tabpanel">
         <form>
             <div class="form-group">
                 <label>ATL Source Area</label>
@@ -32,7 +38,7 @@
             <button type="submit" class="btn btn-primary" ng-click="atl()">Upload</button>
         </form>
     </div>
-    <div id="stml" class="tab-pane fade">
+    <div id="stml" class="tab-pane fade" role="tabpanel">
         <form>
             <div class="form-group">
                 <label>STML Source Area</label>
